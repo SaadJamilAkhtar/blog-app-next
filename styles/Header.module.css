@@ -14,3 +14,10 @@
     border-radius: 0.75rem;
     padding: 0.5rem 1rem;
 }
+
+.header h2:hover{
+    background: white;
+    border-bottom: 2px solid black;
+    color: black;
+    cursor: pointer;
+}

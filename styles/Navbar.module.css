@@ -55,5 +55,6 @@
 }
 
 .nav li:hover{
+    text-underline-offset: 0.5rem;
     text-decoration: underline;
 }
