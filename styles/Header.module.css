@@ -21,3 +21,16 @@
     color: black;
     cursor: pointer;
 }
+
+@media screen and (max-width: 540px){
+    .header h2{
+        margin-top: 1rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 460px){
+    .header h2{
+        font-size: 1.25rem;
+    }
+}
