@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     display: flex;
     width: 100%;
     height: 8rem;
@@ -6,7 +6,7 @@
     justify-content: space-between;
 }
 
-.logo{
+.logo {
     height: 100%;
     display: flex;
     align-items: center;
@@ -14,32 +14,32 @@
     cursor: pointer;
 }
 
-.logo h2{
+.logo h2 {
     font-size: 2.5rem;
     font-weight: 500;
 }
 
-.logo h2 span{
+.logo h2 span {
     color: rgba(255, 255, 255, 0.71);
     padding-left: 0.7rem;
 }
 
-.logo:hover h2{
+.logo:hover h2 {
     color: rgba(255, 255, 255, 0.71);
 }
 
-.logo:hover h2 span{
+.logo:hover h2 span {
     color: white;
 }
 
-.nav_container{
+.nav_container {
     display: flex;
     align-items: center;
     min-width: 50%;
     height: 100%;
 }
 
-.nav{
+.nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -48,13 +48,95 @@
     list-style: none;
 }
 
-.nav li{
+.nav li {
     font-size: 1.25rem;
     font-weight: 500;
     cursor: pointer;
 }
 
-.nav li:hover{
+.nav li:hover {
     text-underline-offset: 0.5rem;
     text-decoration: underline;
+}
+
+.burger {
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    width: 3rem;
+    flex-direction: column;
+    margin-right: 2rem;
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    margin: 0.35rem 0;
+    height: 3px;
+    width: 100%;
+    background: white;
+    transition: all 0.5s ease-out;
+}
+
+.burger div:nth-child(2) {
+    width: 75%;
+}
+
+
+.menu div:nth-child(2) {
+    display: none;
+}
+
+.menu div:nth-child(1) {
+    transform: rotate(45deg) translateY(10px);
+}
+
+.menu div:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
+}
+
+.side_menu{
+    width: 60%;
+    position: absolute;
+    right: 0;
+    top: 6.75rem;
+    background: #3f056e;
+    height: 100vh;
+    border-left: 1px solid white;
+    display: none;
+    flex-direction: column;
+    padding-top: 2rem;
+}
+
+.slide_in{
+    display: none;
+}
+
+.side_menu__nav li{
+    font-size: 2rem;
+    margin: 1.5rem 0;
+    letter-spacing: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right_align{
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 850px) {
+    .nav_container {
+        display: None;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .slide_in{
+        display: flex;
+    }
+
 }

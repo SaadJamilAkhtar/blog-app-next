@@ -30,3 +30,7 @@ h1{
   font-size: 4rem;
   font-weight: 500;
 }
+
+body{
+  width: 100vw;
+}
