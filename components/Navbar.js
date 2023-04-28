@@ -1,8 +1,21 @@
 import React from 'react';
 import styles from '../styles/Navbar.module.css';
 import {useState} from 'react';
+import Link from 'next/link';
 
 function Navbar(props) {
+
+    const nav_links = [
+        {
+            name: 'Home',
+            href: '/'
+        },
+        {
+            name: 'About',
+            href: '/about'
+        },
+    ]
+
     const [animate, setAnimate] = useState(false);
     return (
         <div className={styles.navbar}>
@@ -11,10 +24,11 @@ function Navbar(props) {
             </div>
             <nav className={styles.nav_container}>
                 <ul className={styles.nav}>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Home</li>
-                    <li>About</li>
+                    {nav_links.map( (link, key) => (
+                        <li key={key}>
+                            <Link href={link.href}>{link.name}</Link>
+                        </li>
+                    ))}
                 </ul>
             </nav>
             <div
@@ -29,10 +43,14 @@ function Navbar(props) {
                 className={`${styles.side_menu} ${animate ? styles.slide_in : ''}`}
             >
                 <ul className={styles.side_menu__nav}>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Home</li>
-                    <li>About</li>
+                    {nav_links.map( (link, key) => (
+                        <li
+                            key={key}
+                            onClick={() => setAnimate(!animate)}
+                        >
+                            <Link href={link.href}>{link.name}</Link>
+                        </li>
+                    ))}
                 </ul>
             </nav>
 
