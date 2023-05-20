@@ -4,25 +4,30 @@ import Head from "next/head";
 import ArticleList from '../components/ArticleList'
 const inter = Inter({subsets: ['latin']})
 
-export default function Home({articles}) {
+export default function Home({firstArticles, secondArticles}) {
     return (
         <div>
             <Head>
                 <title>WebDev News</title>
                 <meta name='keywords' content='web, programming, development'/>
             </Head>
-            <ArticleList articles={articles} />
+            <ArticleList articles={firstArticles} path={'article'}/>
+            <ArticleList articles={secondArticles} path={'article-details'}/>
         </div>
     )
 }
 
 export const getStaticProps = async () => {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`)
-    const articles = await res.json()
+    let res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`)
+    const firstArticles = await res.json()
+
+    res = await fetch(`https://jsonplaceholder.typicode.com/posts?_start=6&_limit=6`)
+    const secondArticles = await res.json()
 
     return {
         props: {
-            articles
+            firstArticles,
+            secondArticles
         }
     }
 

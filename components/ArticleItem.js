@@ -1,15 +1,17 @@
 import React from 'react';
-import style from '../styles/Article.module.css'
+import style from '../styles/ArticleList.module.css'
 import Link from 'next/link'
 
-function ArticleItem({article}) {
+function ArticleItem({article, path}) {
     return (
-        <Link href="/article/[id]" as={`/article/${article.id}`}>
-            <div className={style.card}>
-                <h3>{article.title} &rarr;</h3>
-                <p>{article.body}</p>
-            </div>
-        </Link>
+        <div className={style.article_card}>
+            <Link href={`/${path}/[id]`} as={`/${path}/${article.id}`}>
+                <div>
+                    <h3>{article.title} &rarr;</h3>
+                    <p>{article.body}</p>
+                </div>
+            </Link>
+        </div>
     );
 }
 

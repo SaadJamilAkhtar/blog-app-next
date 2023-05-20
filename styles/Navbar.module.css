@@ -106,6 +106,7 @@
     display: none;
     flex-direction: column;
     padding-top: 2rem;
+    z-index: 1000;
 }
 
 .slide_in{
@@ -137,6 +138,24 @@
 
     .slide_in{
         display: flex;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .navbar{
+        height: 5rem;
+    }
+    .logo h2 {
+        font-size: 2rem;
+    }
+
+    .burger{
+        width: 2.5rem;
+        height: 100%;
+    }
+    .burger div{
+        height: 2px;
     }
 
 }
